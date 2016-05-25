@@ -1,0 +1,29 @@
+{
+    "name":        "alexeyshockov/json-wrapper",
+    "type":        "library",
+    "description": "json_encode() and json_decode() wrapper with better error handling",
+    "keywords":    ["json"],
+    "homepage":    "http://github.com/alexeyshockov/php-json-wrapper",
+    "license":     "MIT",
+    "support":     {
+        "issues": "https://github.com/alexeyshockov/php-json-wrapper/issues"
+    },
+    "authors": [
+        {
+            "name":     "Alexey Shockov",
+            "email":    "alexey@shockov.com"
+        }
+    ],
+    "require": {
+        "php": "~5.6 || ~7.0"
+    },
+    "require-dev": {
+        "phpspec/phpspec": "~2.3",
+        "henrikbjorn/phpspec-code-coverage": "~1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "AlexS\\": "src/"
+        }
+    }
+}
