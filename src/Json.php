@@ -52,7 +52,7 @@ class Json
      */
     public function decode($data)
     {
-        $result = json_decode($data, true, $this->decodeOptions);
+        $result = json_decode($data, true, 512, $this->decodeOptions);
 
         if (json_last_error() !== JSON_ERROR_NONE) {
             throw JsonException::fromLastError();
