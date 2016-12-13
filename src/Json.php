@@ -23,9 +23,9 @@ class Json
          return static::$default;
     }
 
-    public static function d($data)
+    public static function d($data, $toArray = true)
     {
-        return static::instance()->decode($data);
+        return static::instance()->decode($data, $toArray);
     }
 
     public static function e($data)
@@ -45,14 +45,15 @@ class Json
 
     /**
      * @param string $data
+     * @param string $toArray
      *
      * @throws JsonException In case of error.
      *
      * @return mixed
      */
-    public function decode($data)
+    public function decode($data, $toArray = true)
     {
-        $result = json_decode($data, true, 512, $this->decodeOptions);
+        $result = json_decode($data, $toArray, 512, $this->decodeOptions);
 
         if (json_last_error() !== JSON_ERROR_NONE) {
             throw JsonException::fromLastError();
